@@ -32,9 +32,9 @@ export const Content  = styled.div`
       transform: scale(0.9);
       transition: all ease 0.2s;
 
-      -webkit-box-shadow: 0px 0px 16px -6px rgba(240,14,14,1);
-      -moz-box-shadow: 0px 0px 16px -6px rgba(240,14,14,1);
-      box-shadow: 0px 0px 16px -6px rgba(240,14,14,1);
+      -webkit-box-shadow: 0px 0px 16px -6px rgba(255, 69, 0, 1);
+      -moz-box-shadow: 0px 0px 16px -6px rgba(255, 69, 0, 1);
+      box-shadow: 0px 0px 16px -6px rgba(255, 69, 0, 1);
     }
 
     > span {
