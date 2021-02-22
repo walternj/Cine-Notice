@@ -14,11 +14,11 @@ const Footer: React.FC = () => {
       </div>
       <img src={logoUrl} alt="Ciné-Notice"/>
       <div className="footer--right-container">
-        <span>by WalterNJ</span>
-        <a href="https://www.linkedin.com/in/walter-nunes-jr/"
+        <span>Mehdi</span>
+        <a href="https://www.linkedin.com/in/mehdi-lafleur-36bb11174/"
         target="new" ><LinkedinIcon /></a>
         <a href="https://github.com/walternj" target="new"><GithubIcon /></a>
-        <a href="https://walternj-portifolio.netlify.app/" target="new"><SiteIcon /></a>
+       <a href='#'><SiteIcon /></a>
       </div>
     </Container>
   );

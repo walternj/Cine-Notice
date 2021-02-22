@@ -1,16 +1,28 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from "react-router-dom"
+import {MdClose} from 'react-icons/md'
 
 import SearchBar from '../SearchBar'
+import Menu from './Menu'
 
-import { Container, MyList } from './styles'
+import { Container, MyList, HeaderUser } from './styles'
 
-const logoUrl = "https://fontmeme.com/permalink/210217/348a3cfe75f8cabeeb7061a4f136be21.png"
+import logo from '../../assets/img/logo-orange.png'
+import logo_c from '../../assets/img/logo-c.png'
 
 const Header: React.FC = () => {
-  const [blackheader, setBlackHeader] = useState(false)
-
+  const [blackheader, setBlackHeader] = useState<boolean>(false)
+  const [toggleMenu, setToggleMenu] = useState(false)
+  const [logoUrl, setLogoUrl] = useState(window.innerWidth >= 768 ? logo : logo_c)
   const history = useHistory()
+
+  useEffect(() => {
+    function getWidth() {
+      let width = window.innerWidth
+      setLogoUrl(width >= 768 ? logo : logo_c)
+    }
+    window.addEventListener('resize', getWidth)
+  },[])
 
   useEffect(() => {
     const input = document.getElementById('searchInput')
@@ -40,6 +52,10 @@ const Header: React.FC = () => {
     }
   },[])
 
+  const handleToggleMenu = () => {
+    setToggleMenu(!toggleMenu)
+  }
+
   return (
     <Container background={blackheader} >
       <img className="header--logo"
@@ -49,12 +65,14 @@ const Header: React.FC = () => {
 
       <SearchBar />
 
-      <div className="header--user">
-        <a href="/">
-          <img src="https://picsum.photos/200/200" alt="user"/>
-        </a>
-      </div>
-
+      <HeaderUser
+        onClick={() => handleToggleMenu()}
+        toggleMenu={toggleMenu}
+      >
+        <img src="https://picsum.photos/200/200" alt="user"/>
+        <MdClose id="closeIcon" fill="var(--color-red)" size={32} />
+      </HeaderUser>
+      <Menu toggleMenu={toggleMenu} />
       <MyList onClick={() => history.push("/mylist")} />
     </Container>
   )

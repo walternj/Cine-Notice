@@ -19,25 +19,23 @@ export const Container = styled.header<{background: boolean}>`
   background: ${props => (props.background ? 'var(--color-header)' : 'transparent')};
 
   @media (max-width:768PX) {
-    padding: 0 10px;
+
     justify-content:space-around;
   }
 
-  @media (max-width:400PX) {
 
+  @media (max-width: 400PX) {
+    padding : 0 10px;
   }
+
 
   .header--logo {
     height: 38px;
     cursor: pointer;
 
-    @media (max-width:768px) {
-
+    @media (max-width:768PX) {
       height: 28px;
-    }
-    @media (max-width:600px) {
-      display: none;
-    }
+  }
   }
 
   .header--user {
@@ -45,15 +43,17 @@ export const Container = styled.header<{background: boolean}>`
     height: 32px;
     padding: 0;
 
-    > a img {
+    > img {
       height: 32px;
+      border: 1px solid var(--color-red);
       border-radius: 4px;
+      cursor: pointer;
     }
 
     @media (max-width:400PX) {
       height: 28px;
 
-      > a img { height: 28px}
+      > img { height: 28px}
     }
   }
 `;
@@ -72,5 +72,43 @@ export const MyList = styled(MdPlaylistPlay)`
   position: absolute;
   right: 18px;
   top: 70px;
+`;
+
+export const HeaderUser = styled.div<{toggleMenu: boolean}>`
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  height: 32px;
+  padding: 0;
+
+  > img {
+    height: 32px;
+    border: 1px solid var(--color-red);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all ease 0.5s;
+    opacity: ${props => (props.toggleMenu ? '0' : '1')};
+
+  }
+
+  #closeIcon {
+    position: absolute;
+
+    cursor: pointer;
+    color: black;
+    border: 1px solid var(--color-red);
+    border-radius: 4px;
+    background-color: var(--color-black);
+    transition: all ease 0.5s;
+    z-index: ${props => (props.toggleMenu ? '1' : '-10')};
+  }
+
+  @media (max-width:400PX) {
+    height: 28px;
+
+    > img { height: 28px}
+  }
+
 `;
 
