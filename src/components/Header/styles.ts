@@ -86,11 +86,5 @@ export const HeaderUser = styled.div<{toggleMenu: boolean}>`
     z-index: ${props => (props.toggleMenu ? '1' : '-10')};
   }
 
-  @media (max-width:400PX) {
-    height: 28px;
-
-    > img { height: 28px}
-  }
-
 `;
 
