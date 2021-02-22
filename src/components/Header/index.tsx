@@ -12,7 +12,7 @@ import logo_c from '../../assets/img/logo-c.png'
 
 const Header: React.FC = () => {
   const [blackheader, setBlackHeader] = useState<boolean>(false)
-  const [toggleMenu, setToggleMenu] = useState(false)
+  const [toggleMenu, setToggleMenu] = useState<boolean>(false)
   const [logoUrl, setLogoUrl] = useState(window.innerWidth >= 768 ? logo : logo_c)
   const history = useHistory()
 
@@ -72,7 +72,7 @@ const Header: React.FC = () => {
         <img src="https://picsum.photos/200/200" alt="user"/>
         <MdClose id="closeIcon" fill="var(--color-red)" size={32} />
       </HeaderUser>
-      <Menu toggleMenu={toggleMenu} />
+      <Menu toggleMenu={toggleMenu}  handleToggleMenu={handleToggleMenu} />
       <MyList onClick={() => history.push("/mylist")} />
     </Container>
   )

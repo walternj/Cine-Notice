@@ -35,27 +35,9 @@ export const Container = styled.header<{background: boolean}>`
 
     @media (max-width:768PX) {
       height: 28px;
-  }
-  }
-
-  .header--user {
-    display: flex;
-    height: 32px;
-    padding: 0;
-
-    > img {
-      height: 32px;
-      border: 1px solid var(--color-red);
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    @media (max-width:400PX) {
-      height: 28px;
-
-      > img { height: 28px}
     }
   }
+
 `;
 
 const iconCSS = css`
