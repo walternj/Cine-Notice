@@ -7,7 +7,7 @@ import { Container, AddFavoriteIcon, RemoveFavoriteIcon } from './styles';
 import { MyListState } from '../../store/reducers/types';
 
 interface ButtonProps {
-  onClick?: any
+  onClick?: () => void,
   itemID?: string | number
 
 }

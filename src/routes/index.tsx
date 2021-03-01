@@ -4,7 +4,7 @@ import {
   Route,
 } from "react-router-dom"
 
-import { Home, FilmDetails, MyList } from '../pages'
+import { Home, FilmDetails, MyList, Profil, Login } from '../pages'
 
 const Routes = () => (
   <Switch>
@@ -16,6 +16,12 @@ const Routes = () => (
     </Route>
     <Route path="/mylist" >
       <MyList />
+    </Route>
+    <Route path="/profil" >
+      <Profil />
+    </Route>
+    <Route path="/login" >
+      <Login />
     </Route>
   </Switch>
 )

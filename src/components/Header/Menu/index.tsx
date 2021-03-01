@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { Container } from './styles';
@@ -15,14 +15,17 @@ const Menu: React.FC<MenuProps> = ({toggleMenu, handleToggleMenu}) => {
           <Link to="/" onClick={handleToggleMenu}>
             <li>Home</li>
           </Link>
-          <Link to="#" onClick={handleToggleMenu}>
+          <Link to="/profil" onClick={handleToggleMenu}>
             <li>Profil</li>
           </Link>
-          <Link to="/Mylist" onClick={handleToggleMenu}>
+          <Link to="/mylist" onClick={handleToggleMenu}>
             <li>Ma Liste</li>
           </Link>
           <Link to="#" onClick={handleToggleMenu}>
             <li>Contacts</li>
+          </Link>
+          <Link to="/Login" onClick={handleToggleMenu}>
+            <li>Login</li>
           </Link>
         </ul>
     </Container>
